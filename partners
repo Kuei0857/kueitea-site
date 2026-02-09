@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	</head>
-	<body class="is-preload">
+	<body class="">
 
 		<header id="header">
 			<div class="inner">

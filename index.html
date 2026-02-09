@@ -10,45 +10,24 @@
 		<meta http-equiv="Expires" content="0" />
 
 		<style>
-			/* 預設遮罩層樣式 */
 			#intro-overlay {
 				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
+				top: 0; left: 0; width: 100%; height: 100%;
 				background-color: #ffffff;
 				z-index: 99999;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				opacity: 1;
-				transition: opacity 1.5s ease-in-out;
+				display: flex; justify-content: center; align-items: center;
+				opacity: 1; transition: opacity 1.5s ease-in-out;
 				pointer-events: none;
 			}
-			
 			#intro-overlay img {
-				max-width: 60%;
-				max-height: 60%;
-				width: auto;
-				height: auto;
+				max-width: 60%; max-height: 60%; width: auto; height: auto;
 				animation: floatUp 3s ease-out;
 			}
-
-			@media screen and (max-width: 736px) {
-				#intro-overlay img {
-					max-width: 80%;
-				}
-			}
-
-			#intro-overlay.fade-out {
-				opacity: 0;
-			}
+			@media screen and (max-width: 736px) { #intro-overlay img { max-width: 80%; } }
+			#intro-overlay.fade-out { opacity: 0; }
 		</style>
 
 		<script>
-			// 在畫面還沒畫出來之前，先檢查是否已經看過動畫
-			// 如果看過了，直接強制隱藏遮罩，完全不會閃爍
 			if (sessionStorage.getItem('introShown')) {
 				document.write('<style>#intro-overlay { display: none !important; }</style>');
 			}
@@ -61,93 +40,86 @@
 		</div>
 
 		<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.png" alt="" /></a>
-					<h1><strong>吉利元亨</strong><br />
-					時間封藏的工藝<br />
-					KUEI TEA.</h1>
-				</div>
-				<nav id="nav" style="margin-top: 2em;">
-					<ul>
-						<li><a href="#one" class="active">Brand 品牌</a></li>
-						<li><a href="#two">Products 產品</a></li>
-						<li><a href="archive/index.html">Archive 檔案</a></li>
-						<li><a href="partners/index.html">Partners 合作</a></li>
-					</ul>
-				</nav>
-			</header>
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="images/avatar.png" alt="" /></a>
+				<h1><strong>吉利元亨</strong><br />
+				時間封藏的工藝<br />
+				KUEI TEA.</h1>
+			</div>
+			<nav id="nav" style="margin-top: 2em;">
+				<ul>
+					<li><a href="#one" class="active">Brand 品牌</a></li>
+					<li><a href="#two">Products 產品</a></li>
+					<li><a href="/archive/index.html">Archive 檔案</a></li>
+					<li><a href="/partners/index.html">Partners 合作</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<div id="main">
+			<section id="one">
+				<header class="major">
+					<h2>不語，自有其重。</h2>
+				</header>
+				<p>這裡放置你的品牌核心敘事。文字極簡、克制。如同百年家族的沈穩，不需過多解釋。</p>
+			</section>
 
-				<section id="one">
-						<header class="major">
-							<h2>不語，自有其重。</h2>
-						</header>
-						<p>這裡放置你的品牌核心敘事。文字極簡、克制。如同百年家族的沈穩，不需過多解釋。</p>
-					</section>
+			<section id="two">
+				<h2>Recent Products</h2>
+				<div class="row">
+					<article class="col-6 col-12-xsmall work-item">
+						<a href="images/p1.png" class="image fit thumb"><img src="images/p1.png" alt="" /></a>
+						<h3>產品名稱一</h3>
+						<p>極簡短的描述。</p>
+					</article>
+					<article class="col-6 col-12-xsmall work-item">
+						<a href="images/p2.png" class="image fit thumb"><img src="images/p2.png" alt="" /></a>
+						<h3>產品名稱二</h3>
+						<p>極簡短的描述。</p>
+					</article>
+				</div>
+				<ul class="actions">
+					<li><a href="/products/index.html" class="button">Full Portfolio</a></li>
+				</ul>
+			</section>
 
-				<section id="two">
-						<h2>Recent Products</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/p1.png" class="image fit thumb"><img src="images/p1.png" alt="" /></a>
-								<h3>產品名稱一</h3>
-								<p>極簡短的描述。</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/p2.png" class="image fit thumb"><img src="images/p2.png" alt="" /></a>
-								<h3>產品名稱二</h3>
-								<p>極簡短的描述。</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="products/index.html" class="button">Full Portfolio</a></li>
-						</ul>
-					</section>
-
-				<section id="three">
-						<h2>Get In Touch</h2>
-						<p>如有需求，請透過官方渠道聯繫。</p>
-					</section>
-
-			</div>
+			<section id="three">
+				<h2>Get In Touch</h2>
+				<p>如有需求，請透過官方渠道聯繫。</p>
+			</section>
+		</div>
 
 		<footer id="footer">
-				<div class="inner">
-					<ul class="copyright">
-						<li>&copy; Kuei Tea. All rights reserved.</li><li>Design: HTML5 UP</li>
-					</ul>
-				</div>
-			</footer>
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Kuei Tea. All rights reserved.</li><li>Design: HTML5 UP</li>
+				</ul>
+			</div>
+		</footer>
 
 		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-			<script>
-				window.onload = function() {
-					var overlay = document.getElementById('intro-overlay');
-					
-					// 只有當 session 裡沒有紀錄時，才播放動畫
-					if (!sessionStorage.getItem('introShown') && overlay) {
-						// 沒看過：播放動畫
+		<script>
+			window.onload = function() {
+				var overlay = document.getElementById('intro-overlay');
+				// 如果沒紀錄才播動畫
+				if (!sessionStorage.getItem('introShown') && overlay) {
+					setTimeout(function() {
+						overlay.classList.add('fade-out');
 						setTimeout(function() {
-							overlay.classList.add('fade-out');
-							setTimeout(function() {
-								overlay.style.display = 'none';
-								// 動畫播完後，馬上設定「我看過了」
-								sessionStorage.setItem('introShown', 'true');
-							}, 1500); 
-						}, 2000); // 停留 2 秒
-					} else {
-						// 看過了：確保隱藏（雙重保險）
-						if(overlay) overlay.style.display = 'none';
-					}
-				};
-			</script>
-
+							overlay.style.display = 'none';
+							sessionStorage.setItem('introShown', 'true'); // 播完後寫入紀錄
+						}, 1500); 
+					}, 2000); 
+				} else {
+					if(overlay) overlay.style.display = 'none';
+				}
+			};
+		</script>
 	</body>
 </html>

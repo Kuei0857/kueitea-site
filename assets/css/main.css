@@ -2578,38 +2578,41 @@ input, select, textarea {
 
 /* Header */
 
-	#header {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		-moz-align-items: -moz-flex-end;
-		-webkit-align-items: -webkit-flex-end;
-		-ms-align-items: -ms-flex-end;
-		align-items: flex-end;
-		-moz-justify-content: space-between;
-		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
-		justify-content: space-between;
-		background-color: #1f1815;
-		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/bg.png");
-		background-position: top left,							top left;
-		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
-		color: rgba(255, 255, 255, 0.5);
-		height: 100%;
-		left: 0;
-		padding: 8em 4em;
-		position: fixed;
-		text-align: right;
-		top: 0;
-		width: 35%;
-	}
+	/* 這是電腦版的主設定，請改回這樣 */
+#header {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -moz-align-items: -moz-flex-end;
+    -webkit-align-items: -webkit-flex-end;
+    -ms-align-items: -ms-flex-end;
+    align-items: flex-end;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    background-color: #1f1815;
+    background-attachment: scroll, scroll;
+    background-image: url("../../images/overlay.png"), url("../../images/bg.png"); /* 注意圖片路徑 */
+    background-position: top left, top left;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, 150%; /* 電腦版背景放大 */
+    color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    left: 0;
+    /* 👇 關鍵錯誤在這裡，電腦版要大間距！請改回 8em 4em */
+    padding: 8em 4em; 
+    position: fixed;
+    text-align: right;
+    top: 0;
+    /* 👇 還有這裡，電腦版寬度要是 35% */
+    width: 35%; 
+}
 
 		#header > * {
 			-moz-flex-shrink: 0;
@@ -3068,19 +3071,21 @@ input, select, textarea {
 
 		/* Header */
 
-			#header {
+		/* 這是手機/平板專用設定，只有這裡才要縮小 */
+    #header {
         background-attachment: scroll;
         background-position: top left, center center;
-        background-size: auto,      cover;
+        background-size: auto, cover;
         left: auto;
-        padding: 3em 2em; /* 🌟 修改：高度減半，左右間距也縮小 */
+        /* 👇 手機版改小間距 (這是我們原本想做的) */
+        padding: 4em 2em; 
         position: relative;
         text-align: center;
         top: auto;
-        width: 100%;
+        /* 👇 手機版寬度要全滿 */
+        width: 100%; 
         display: block;
     }
-    
     /* 🌟 新增：手機版把 Logo 縮小一點，讓畫面更平衡 */
     #header .image.avatar {
         width: 5em;
@@ -3242,3 +3247,30 @@ input, select, textarea {
 			}
 
 	}
+/* === 放在檔案最後面的修正區 === */
+
+/* 強制 Logo 去除邊框與陰影 */
+.image.avatar img {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* 強制導覽列置中 */
+#nav ul {
+    list-style-type: none !important;
+    text-align: center !important;
+}
+#nav ul li {
+    text-align: center !important;
+}
+
+/* 針對手機版特別縮小 Logo (這裡再次強調) */
+@media screen and (max-width: 980px) {
+    #header .image.avatar {
+        width: 5em; /* 手機版 Logo 縮小 */
+        margin-bottom: 1em;
+        margin-left: auto;  /* 確保圖片左右置中 */
+        margin-right: auto;
+    }
+}

@@ -2760,3 +2760,78 @@ input, select, textarea {
 #nav ul li {
     text-align: center !important;
 }
+
+
+
+/* =================================================
+   吉利元亨 特別修復包 (Fix for Alignment & Logo)
+   ================================================= */
+
+/* 1. 強制導覽列置中，並移除所有預設圓點和縮排 */
+#header nav ul {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 2em 0 !important;
+    text-align: center !important;
+}
+
+#header nav ul li {
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    border: none !important;
+    text-align: center !important;
+    display: block !important;
+}
+
+/* 2. 移除可能殘留的偽元素 (那些頑固的小點點) */
+#header nav ul li:before,
+#header nav ul li:after {
+    display: none !important;
+    content: none !important;
+}
+
+/* 3. 調整 Logo 圖片質感 */
+.image.avatar {
+    margin: 0 auto 1em auto !important; /* 確保圖片自己也置中 */
+}
+
+.image.avatar img {
+    /* 移除模板預設的陰影和邊框，讓 Logo 更乾淨 */
+    box-shadow: none !important;
+    border: none !important;
+    /* 確保圖片是正圓形 */
+    border-radius: 50% !important;
+}
+
+/* 4. 修改字體顏色 (提升質感) */
+/* 把原本的綠色連結改成 白色/金色，讓它在背景上更清楚 */
+#header nav ul li a {
+    color: #ffffff !important; /* 白色文字 */
+    font-weight: 400; /* 字體不要太粗，比較優雅 */
+    letter-spacing: 2px; /* 增加字距，提升高級感 */
+    text-decoration: none;
+    border: none !important;
+}
+
+/* 滑鼠移過去變成金色 */
+#header nav ul li a:hover {
+    color: #d4af37 !important; /* 吉利元亨金 */
+}
+
+/* 5. 針對手機版的特別微調 */
+@media screen and (max-width: 980px) {
+    #header {
+        /* 讓手機版 Header 背景稍微透明一點，透出後面的圖，會更有質感 */
+        background-color: rgba(0, 0, 0, 0.6) !important;
+        background-image: none !important;
+        text-align: center !important;
+        padding: 3em 1em !important;
+    }
+    
+    /* 修正手機版 Logo 大小 */
+    .image.avatar img {
+        width: 100px !important; /* 稍微縮小一點，不要擋住整個畫面 */
+        height: 100px !important;
+    }
+}

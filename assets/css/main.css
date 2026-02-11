@@ -2142,9 +2142,13 @@ input, select, textarea {
 			}
 
 			.image.avatar img {
-				border-radius: 100%;
-				width: 100%;
-			}
+    border-radius: 100%;
+    width: 100%;
+    /* 🌟 新增：去除所有邊框與背景干擾，讓透明圖更銳利 */
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
 
 /* List */
 
@@ -2642,6 +2646,18 @@ input, select, textarea {
 			margin: 0 0 1em 0;
 			width: 6.25em;
 		}
+/* 🌟 新增：強制導覽列置中並去除小圓點 */
+#nav ul {
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#nav ul li {
+    display: block;
+    margin: 0.5em 0;
+    text-align: center;
+}
 
 /* Footer */
 
@@ -3053,16 +3069,23 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				background-attachment: scroll;
-				background-position: top left, center center;
-				background-size: auto,		cover;
-				left: auto;
-				padding: 6em 4em;
-				position: relative;
-				text-align: center;
-				top: auto;
-				width: 100%;
-				display: block;
+        background-attachment: scroll;
+        background-position: top left, center center;
+        background-size: auto,      cover;
+        left: auto;
+        padding: 3em 2em; /* 🌟 修改：高度減半，左右間距也縮小 */
+        position: relative;
+        text-align: center;
+        top: auto;
+        width: 100%;
+        display: block;
+    }
+    
+    /* 🌟 新增：手機版把 Logo 縮小一點，讓畫面更平衡 */
+    #header .image.avatar {
+        width: 5em;
+        margin-bottom: 1em;
+    }
 			}
 
 				#header h1 {

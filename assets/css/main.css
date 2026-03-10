@@ -135,6 +135,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
 		color: #787878;
 		font-weight: 400;
 		line-height: 1em;
@@ -2828,10 +2829,18 @@ input, select, textarea {
         text-align: center !important;
         padding: 3em 1em !important;
     }
-    
-    /* 修正手機版 Logo 大小 */
-    .image.avatar img {
-        width: 100px !important; /* 稍微縮小一點，不要擋住整個畫面 */
+
+    /* 修正手機版 Logo 容器與圖片尺寸不同步，避免視覺中心偏右 */
+    #header .image.avatar {
+        width: 100px !important;
         height: 100px !important;
+        margin: 0 auto 1.25em auto !important;
+    }
+    
+    #header .image.avatar img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        display: block;
     }
 }

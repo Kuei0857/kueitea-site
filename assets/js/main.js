@@ -98,6 +98,8 @@
 		// Lightbox gallery.
 			$window.on('load', function() {
 
+				// 原因：內頁已省略相簿套件；只有首頁確實有圖庫時才初始化，避免缺少套件造成 JavaScript 報錯。
+				if ($('#two .work-item a.image').length && typeof $.fn.poptrox === 'function') {
 				$('#two').poptrox({
 					caption: function($a) { return $a.next('h3').text(); },
 					overlayColor: '#2c2c2c',
@@ -111,6 +113,7 @@
 					usePopupNav: true,
 					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 				});
+				}
 
 			});
 

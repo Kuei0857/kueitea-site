@@ -36,18 +36,29 @@ py -m http.server 8000
 
 **重要：** 目前產品名稱、年份、產地及文字有草稿示例；發布前應逐一與品牌主理人確認，避免將示例當成正式產品資料。
 
-## 3. 發布網站（GitHub Pages）
+## 3. 網域與網站發布
 
-1. 在 GitHub 開啟此 repository → **Settings → Pages**。
-2. **Build and deployment** 選 `Deploy from a branch`。
-3. Branch 選 `main`、資料夾選 `/(root)`，儲存。
-4. 等待 GitHub 顯示發布成功，再使用 **Visit site** 開啟網站。
-5. 若修改是在 Pull Request（PR）分支，需先測試並合併到 `main`，才會影響正式網站。
+- **正式網址（主理人已確認）**：https://kueitea.com/
+- **網域註冊商**：Cloudflare
+- **主要聯絡方式**：https://www.instagram.com/kuei_puerhtea/
+- **實際網站託管服務**：待確認（網域在 Cloudflare 購買，並不代表一定使用 Cloudflare Pages）。
+- **程式碼倉庫**：https://github.com/Kuei0857/kueitea-site
 
-若沿用此專案名稱，GitHub Pages 的預設專案網址通常是：
-https://kuei0857.github.io/kueitea-site/
+### 先確認網站在哪裡發布
 
-**注意：** 以上為 GitHub Pages 的預期網址，是否已啟用及自訂網域仍需在 Settings → Pages 確認。
+1. 到 Cloudflare 控制台，查看 **Workers & Pages** 是否有網站專案連接此 GitHub repository。
+2. 也可以查看 GitHub repository → **Settings → Pages**，確認 GitHub Pages 是否啟用。
+3. 確認正式發布服務後，才修改該服務的部署設定。**避免同時修改 DNS 與部署配置，造成現有網站中斷。**
+
+### 如果網站目前使用 GitHub Pages
+
+在 Repository → **Settings → Pages**，確認來源分支及 Custom domain 是否設定為 `kueitea.com`，並確認 HTTPS 正常。實際 DNS 設定需與 Cloudflare 後台核對。
+
+### 如果網站目前使用 Cloudflare Pages
+
+在 Cloudflare → **Workers & Pages** 找到網站專案，確認 GitHub 來源、正式分支為 `main`、網站輸出目錄為專案根目錄（靜態網站無需額外執行 build command），並查看 `kueitea.com` 是否設為自訂網域。
+
+**無論使用哪個平台**：開發修改先提交到 Pull Request（PR）；完成測試並合併到 `main` 後，才依目前已設定的發布流程生效。
 
 ## 4. 每次修改後的檢查
 

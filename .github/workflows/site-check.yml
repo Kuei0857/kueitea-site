@@ -1,0 +1,23 @@
+# 為何加入：每次提交 PR 就自動檢查靜態網頁的路徑，避免日後新增頁面時產生 404。
+name: Website link checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get website files
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate HTML links and image paths
+        run: python3 scripts/check_links.py

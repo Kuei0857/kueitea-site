@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-Hant">
+<!-- 維護註記：資源連結採相對路徑，讓本機預覽與 GitHub Pages 子路徑都可使用。 -->
 	<head>
 		<title>吉利元亨 | KUEI TEA</title>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/images/avatar.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
+		<meta name="description" content="吉利元亨 KUEI TEA，時間封藏的工藝。探索品牌、茶品、檔案與合作資訊。" />
+		<!-- 正式網站網址已由主理人確認；協助搜尋引擎統一頁面來源。 -->
+		<link rel="canonical" href="https://kueitea.com/" />
+		<link rel="icon" type="image/png" href="images/avatar.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
 
 		<style>
 			#intro-overlay {
@@ -26,24 +28,21 @@
 			}
 			@media screen and (max-width: 736px) { #intro-overlay img { max-width: 80%; } }
 			#intro-overlay.fade-out { opacity: 0; }
+			@media (prefers-reduced-motion: reduce) { #intro-overlay, #intro-overlay img { animation: none; transition: none; } }
 		</style>
 
-		<script>
-			// 如果來源網址 (Referrer) 包含 "kueitea.com"，代表是站內跳轉，直接隱藏動畫
-			if (document.referrer && document.referrer.indexOf("kueitea.com") !== -1) {
-				document.write('<style>#intro-overlay { display: none !important; }</style>');
-			}
-		</script>
+		
 	</head>
 	<body class="">
 
-		<div id="intro-overlay">
-			<img src="/images/card-v1.png" alt="吉利元亨" />
+		<!-- 入場動畫保留品牌視覺；減少動畫偏好的訪客會跳過。 -->
+		<div id="intro-overlay" aria-hidden="true">
+			<img src="images/card-v1.png" alt="吉利元亨" />
 		</div>
 
 		<header id="header">
 			<div class="inner">
-				<a href="#" class="image avatar"><img src="/images/avatar.png" alt="" /></a>
+				<a href="#one" class="image avatar" aria-label="前往品牌介紹"><img src="images/avatar.png" alt="吉利元亨品牌標誌" /></a>
 				<h1><strong>吉利元亨</strong><br />
 				時間封藏的工藝<br />
 				KUEI TEA.</h1>
@@ -52,8 +51,8 @@
 				<ul>
 					<li><a href="#one" class="active">Brand 品牌</a></li>
 					<li><a href="#two">Products 產品</a></li>
-					<li><a href="/archive/">Archive 檔案</a></li>
-					<li><a href="/partners/">Partners 合作</a></li>
+					<li><a href="archive/">Archive 檔案</a></li>
+					<li><a href="partners/">Partners 合作</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -70,24 +69,28 @@
 				<h2>Recent Products</h2>
 				<div class="row">
 					<article class="col-6 col-12-xsmall work-item">
-						<a href="/images/p1.png" class="image fit thumb"><img src="/images/p1.png" alt="" /></a>
+						<a href="images/p1.png" class="image fit thumb"><img src="images/p1.png" alt="茶品展示照片" loading="lazy" /></a>
 						<h3>產品名稱一</h3>
 						<p>極簡短的描述。</p>
 					</article>
 					<article class="col-6 col-12-xsmall work-item">
-						<a href="/images/p2.png" class="image fit thumb"><img src="/images/p2.png" alt="" /></a>
+						<a href="images/p2.png" class="image fit thumb"><img src="images/p2.png" alt="茶品展示照片" loading="lazy" /></a>
 						<h3>產品名稱二</h3>
 						<p>極簡短的描述。</p>
 					</article>
 				</div>
 				<ul class="actions">
-					<li><a href="/products/" class="button">Full Portfolio</a></li>
+					<li><a href="products/" class="button">Full Portfolio</a></li>
 				</ul>
 			</section>
 
 			<section id="three">
 				<h2>Get In Touch</h2>
-				<p>如有需求，請透過官方渠道聯繫。</p>
+				<p>合作邀約與茶品交流，歡迎透過 Instagram 聯繫。</p>
+				<!-- 主理人已確認使用 Instagram 作為聯絡入口；移除 QR 分享追蹤參數，讓網址更易維護。 -->
+				<ul class="actions">
+					<li><a href="https://www.instagram.com/kuei_puerhtea/" class="button" target="_blank" rel="noopener noreferrer">Instagram · @kuei_puerhtea</a></li>
+				</ul>
 			</section>
 		</div>
 
@@ -99,37 +102,31 @@
 			</div>
 		</footer>
 
-		<script src="/assets/js/jquery.min.js"></script>
-		<script src="/assets/js/jquery.poptrox.min.js"></script>
-		<script src="/assets/js/browser.min.js"></script>
-		<script src="/assets/js/breakpoints.min.js"></script>
-		<script src="/assets/js/util.js"></script>
-		<script src="/assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
 
+		<script src="assets/js/main.js"></script>
+
+<!-- 為何保留這段：訪客首次開啟首頁才播放動畫；站內切換與偏好減少動畫者略過。 -->
 		<script>
-			window.onload = function() {
-				var overlay = document.getElementById('intro-overlay');
-				
-				// 再次檢查來源，確保邏輯一致
-				var isInternal = document.referrer && document.referrer.indexOf("kueitea.com") !== -1;
-
-				if (isInternal) {
-					// 如果是站內跳轉，隱藏
-					if(overlay) overlay.style.display = 'none';
-				} else {
-					// 如果是從外面進來 (Google, 輸入網址, 關閉分頁重開)，播放動畫
-					if(overlay) {
-						setTimeout(function() {
-							overlay.classList.add('fade-out');
-							setTimeout(function() {
-								overlay.style.display = 'none';
-							}, 1500); 
-						}, 2000); // 停留 2 秒
-					}
-				}
-			};
+			(function () {
+				const overlay = document.getElementById('intro-overlay');
+				if (!overlay) return;
+				const referrer = document.referrer;
+				let internal = false;
+				try { internal = Boolean(referrer) && new URL(referrer).origin === window.location.origin; } catch (_) {}
+				const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				if (internal || reducedMotion) { overlay.remove(); return; }
+				window.addEventListener('load', function () {
+					window.setTimeout(function () {
+						overlay.classList.add('fade-out');
+						overlay.addEventListener('transitionend', function () { overlay.remove(); }, { once: true });
+						window.setTimeout(function () { overlay.remove(); }, 1800);
+					}, 1200);
+				}, { once: true });
+			})();
 		</script>
 	</body>
 </html>
-
-

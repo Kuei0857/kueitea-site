@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hant">
+<!-- 維護註記：資源連結採相對路徑，讓本機預覽與 GitHub Pages 子路徑都可使用。 -->
 	<head>
 		<title>吉利元亨 | KUEI TEA</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="吉利元亨 KUEI TEA，時間封藏的工藝。探索品牌、茶品、檔案與合作資訊。" />
-		<link rel="icon" type="image/png" href="/images/avatar.png" />
+		<link rel="icon" type="image/png" href="images/avatar.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 		
 
 		<style>
@@ -32,13 +33,14 @@
 	</head>
 	<body class="">
 
+		<!-- 入場動畫保留品牌視覺；減少動畫偏好的訪客會跳過。 -->
 		<div id="intro-overlay" aria-hidden="true">
-			<img src="/images/card-v1.png" alt="吉利元亨" />
+			<img src="images/card-v1.png" alt="吉利元亨" />
 		</div>
 
 		<header id="header">
 			<div class="inner">
-				<a href="#one" class="image avatar" aria-label="前往品牌介紹"><img src="/images/avatar.png" alt="吉利元亨品牌標誌" /></a>
+				<a href="#one" class="image avatar" aria-label="前往品牌介紹"><img src="images/avatar.png" alt="吉利元亨品牌標誌" /></a>
 				<h1><strong>吉利元亨</strong><br />
 				時間封藏的工藝<br />
 				KUEI TEA.</h1>
@@ -47,8 +49,8 @@
 				<ul>
 					<li><a href="#one" class="active">Brand 品牌</a></li>
 					<li><a href="#two">Products 產品</a></li>
-					<li><a href="/archive/">Archive 檔案</a></li>
-					<li><a href="/partners/">Partners 合作</a></li>
+					<li><a href="archive/">Archive 檔案</a></li>
+					<li><a href="partners/">Partners 合作</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -65,18 +67,18 @@
 				<h2>Recent Products</h2>
 				<div class="row">
 					<article class="col-6 col-12-xsmall work-item">
-						<a href="/images/p1.png" class="image fit thumb"><img src="/images/p1.png" alt="" /></a>
+						<a href="images/p1.png" class="image fit thumb"><img src="images/p1.png" alt="茶品展示照片" loading="lazy" /></a>
 						<h3>產品名稱一</h3>
 						<p>極簡短的描述。</p>
 					</article>
 					<article class="col-6 col-12-xsmall work-item">
-						<a href="/images/p2.png" class="image fit thumb"><img src="/images/p2.png" alt="" /></a>
+						<a href="images/p2.png" class="image fit thumb"><img src="images/p2.png" alt="茶品展示照片" loading="lazy" /></a>
 						<h3>產品名稱二</h3>
 						<p>極簡短的描述。</p>
 					</article>
 				</div>
 				<ul class="actions">
-					<li><a href="/products/" class="button">Full Portfolio</a></li>
+					<li><a href="products/" class="button">Full Portfolio</a></li>
 				</ul>
 			</section>
 
@@ -94,13 +96,14 @@
 			</div>
 		</footer>
 
-		<script src="/assets/js/jquery.min.js"></script>
-		<script src="/assets/js/jquery.poptrox.min.js"></script>
-		<script src="/assets/js/browser.min.js"></script>
-		<script src="/assets/js/breakpoints.min.js"></script>
-		<script src="/assets/js/util.js"></script>
-		<script src="/assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
 
+		<script src="assets/js/main.js"></script>
+
+<!-- 為何保留這段：訪客首次開啟首頁才播放動畫；站內切換與偏好減少動畫者略過。 -->
 		<script>
 			(function () {
 				const overlay = document.getElementById('intro-overlay');
@@ -121,5 +124,3 @@
 		</script>
 	</body>
 </html>
-
-

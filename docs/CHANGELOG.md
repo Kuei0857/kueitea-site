@@ -20,8 +20,8 @@
 
 - 首頁的品牌敘事、產品名稱與描述仍是草稿。
 - `products/p1.html` 內的茶葉年份、產區及敘事為原有資料，**尚未經品牌主理人查證**。
-- `partners/index.html` 中的 contact@kueitea.com 是否為正式信箱需確認。
-- 正式網址、自訂網域及 GitHub Pages 部署狀態尚待確認。
+- 主理人已提供 Instagram 聯絡帳號；舊的 contact@kueitea.com 尚未核實，已撤下對外按鈕。
+- 正式網址為 https://kueitea.com/，網域由 Cloudflare 註冊；實際託管平台及其設定仍待確認。
 
 ## 未來工作方式
 
@@ -29,3 +29,14 @@
 2. 每次修改都寫明「改動／原因／驗證結果」。
 3. 執行靜態連結檢查，再於手機與電腦測試。
 4. 任何涉及品牌方向、產品真實資訊、對外聯絡資訊或正式發布的變更，先與主理人確認。
+
+## 2026-11-04｜確認網域與聯絡方式
+
+| 修改項目 | 為什麼修改 | 影響 |
+|---|---|---|
+| 首頁加入 Instagram 按鈕 | 主理人已提供官方聯絡方式 | 讓訪客可直接前往 @kuei_puerhtea |
+| 合作頁改為 Instagram 私訊 | 舊 Email 尚未確認為有效對外聯絡方式 | 降低寄錯信箱的風險 |
+| 首頁加入 canonical 網址 | 主理人已確認正式網域為 kueitea.com | 搜尋引擎優先辨認正式網址 |
+| 更新 README 網域與部署說明 | Cloudflare 域名註冊和 Cloudflare Pages 網站託管是兩件事 | 避免誤改現有部署與 DNS |
+
+**待釐清：** 網站目前是使用 GitHub Pages、Cloudflare Pages，或其他部署服務。
